@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import {
   Main,
   Timeline,
@@ -8,6 +8,7 @@ import {
   Navigation,
   Footer,
 } from "./components";
+import AboutMe from './components/AboutMe';
 import FadeIn from './components/FadeIn';
 import './index.scss';
 
@@ -23,21 +24,22 @@ function App() {
     }
 
     useEffect(() => {
-        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-      }, []);
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }, []);
 
     return (
-    <div className={`main-container ${mode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
-        <Navigation parentToChild={{mode}} modeChange={handleModeChange}/>
-        <FadeIn transitionDuration={700}>
-            <Main/>
-            <Expertise/>
-            <Timeline/>
-            <Project/>
-            <Contact/>
-        </FadeIn>
-        <Footer />
-    </div>
+        <div className={`main-container ${mode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
+            <Navigation parentToChild={{ mode }} modeChange={handleModeChange} />
+            <FadeIn transitionDuration={700}>
+                <Main />
+                <AboutMe /> {/* Add AboutMe component */}
+               <Expertise />
+                <Timeline />
+                <Project />
+                <Contact />
+            </FadeIn>
+            <Footer />
+        </div>
     );
 }
 
