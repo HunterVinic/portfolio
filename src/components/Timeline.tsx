@@ -32,7 +32,7 @@ function Timeline() {
 
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="May 2023 - Oct 2023"
+            date="Mar 2024 - Mar 2025"
             iconStyle={{ background: '#5000ca', color: '#fff' }}
             icon={<FontAwesomeIcon icon={faMobile} />}
           >
@@ -49,7 +49,7 @@ function Timeline() {
 
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="Apr 2023 - Sep 2023"
+            date="May 2023 - Oct 2023"
             iconStyle={{ background: '#5000ca', color: '#fff' }}
             icon={<FontAwesomeIcon icon={faRobot} />}
           >
@@ -64,7 +64,7 @@ function Timeline() {
 
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="Mar 2024 - Mar 2025"
+            date="Apr 2023 - Sep 2023"
             iconStyle={{ background: '#5000ca', color: '#fff' }}
             icon={<FontAwesomeIcon icon={faMicrochip} />}
           >
