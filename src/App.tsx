@@ -4,7 +4,7 @@ import {
   Timeline,
   Expertise,
   Project,
-  Contact,
+//   Contact,
   Navigation,
   Footer,
 } from "./components";
@@ -13,14 +13,10 @@ import FadeIn from './components/FadeIn';
 import './index.scss';
 
 function App() {
-    const [mode, setMode] = useState<string>('dark');
+    const [mode, setMode] = useState<'dark' | 'light'>('dark'); // Explicit type
 
     const handleModeChange = () => {
-        if (mode === 'dark') {
-            setMode('light');
-        } else {
-            setMode('dark');
-        }
+        setMode(prevMode => prevMode === 'dark' ? 'light' : 'dark');
     }
 
     useEffect(() => {
@@ -31,12 +27,12 @@ function App() {
         <div className={`main-container ${mode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
             <Navigation parentToChild={{ mode }} modeChange={handleModeChange} />
             <FadeIn transitionDuration={700}>
-                <Main />
-                <AboutMe /> {/* Add AboutMe component */}
-               <Expertise />
+                <Main mode={mode} /> {/* Pass mode prop here */}
+                <AboutMe />
+                <Expertise />
                 <Timeline />
                 <Project />
-                <Contact />
+                {/* <Contact /> */}
             </FadeIn>
             <Footer />
         </div>
