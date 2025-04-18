@@ -1,5 +1,5 @@
 .skills-container {
-    padding: 5% 10%;
+    padding: 0% 10%;
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -60,26 +60,123 @@
     color: rgb(39, 40, 34);
 }
 
-@media screen {
-    @media (max-width: 768px) {
-        .skills-container {
-            display: block;
-            padding-left: 5%;
-            padding-right: 5%;
-        }
+// Certificates Section
+.certificates-container {
+    padding-top: 40px;
     
-        .skills-container .skills-grid {
-            display: initial;
-        }
+    h1 {
+        margin-bottom: 30px;
+    }
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.certificate-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-3px);
+    }
+    
+    svg {
+        color: #ffd700; // Gold color for certificates
+    }
+}
+
+.certificate-info {
+    h3 {
+        margin: 0 0 5px 0;
+        color: white;
+    }
+    
+    p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.9rem;
+    }
+    
+    .year {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.8rem;
+    }
+}
+
+// Certificate Preview Dialog
+.certificate-dialog {
+    text-align: center;
+    padding: 30px;
+    
+    h2 {
+        color: #333;
+        margin-bottom: 5px;
+    }
+    
+    .issuer {
+        color: #666;
+        margin-bottom: 20px;
+    }
+    
+    .certificate-image-container {
+        margin: 20px 0;
         
-        .skills-container .skills-grid .skill {
-            padding-bottom: 5%;
+        .certificate-image {
+            max-width: 100%;
+            max-height: 70vh;
+            border: 1px solid #eee;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
     }
+    
+    .preview-notice {
+        color: #999;
+        font-style: italic;
+        margin-top: 20px;
+    }
+}
 
-    @media (max-width: 567px) {
-        .skills {
-            font-size: 12px;
+// Responsive adjustments
+@media (max-width: 768px) {
+    .skills-container {
+        display: block;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .skills-container .skills-grid {
+        display: initial;
+    }
+    
+    .skills-container .skills-grid .skill {
+        padding-bottom: 5%;
+    }
+
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .certificate-dialog {
+        padding: 15px;
+        
+        .certificate-image {
+            max-height: 60vh;
         }
+    }
+}
+
+@media (max-width: 567px) {
+    .skills {
+        font-size: 12px;
     }
 }
